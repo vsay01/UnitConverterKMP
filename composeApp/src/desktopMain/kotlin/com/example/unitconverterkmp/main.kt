@@ -1,5 +1,6 @@
 package com.example.unitconverterkmp
 
+import androidx.compose.runtime.remember
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 
@@ -8,6 +9,7 @@ fun main() = application {
         onCloseRequest = ::exitApplication,
         title = "UnitConverterKMP",
     ) {
-        App()
+        val viewModel = remember { ConverterViewModel() }
+        UnitConverterApp(viewModel)
     }
 }

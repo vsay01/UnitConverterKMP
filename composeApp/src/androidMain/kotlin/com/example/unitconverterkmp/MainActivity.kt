@@ -11,9 +11,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
-
+        val viewModel = ConverterViewModel()
         setContent {
-            App()
+            UnitConverterApp(viewModel)
         }
     }
 }
@@ -21,5 +21,6 @@ class MainActivity : ComponentActivity() {
 @Preview
 @Composable
 fun AppAndroidPreview() {
-    App()
+    val viewModel = ConverterViewModel()
+    UnitConverterApp(viewModel)
 }
